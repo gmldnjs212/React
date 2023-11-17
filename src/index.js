@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  // App.js에서 내보낸 App을 여기서 받는다.
   <React.StrictMode>
     <App />
   </React.StrictMode>
