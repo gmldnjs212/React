@@ -8,7 +8,13 @@ class App extends Component {
     { id: 1, charge: "렌트비", amount: 1600 },
     { id: 2, charge: "교통비", amount: 400 },
     { id: 3, charge: "식비", amount: 1200 }
-  ];
+  ]
+
+  handleDelete=(id)=>{
+    const newExpenses = this.initialExpenses.filter(expense=>expense.id !== id)
+    console.log(newExpenses);
+  }
+
   render() {
     return (
       <main className="main-container">
@@ -25,7 +31,10 @@ class App extends Component {
           style={{ width: "100%", backgroundColor: "white", padding: "1rem" }}
         >
           {/* Expens List */}
-          <ExpenseList initialExpenses={this.initialExpenses}/>
+          <ExpenseList 
+            initialExpenses={this.initialExpenses}
+            handleDelete={this.handleDelete}
+          />
         </div>
 
         <div
@@ -38,8 +47,8 @@ class App extends Component {
         </div>
       </main>
     );
-  }
-}
+  };
+};
 
 // App 컴포넌트를 export default로 내보내면 index.js에서 받는다.
 export default App;
